@@ -16,11 +16,30 @@ A reputation mechanism adopted in Stack Overflow, it can be accumulate by answer
     \centering
     \includegraphics[width=0.7\columnwidth]{img/Fig1_2017.pdf}
     \caption{Median reputation versus answer time-rank. Questions with a total of 1 to 5 answers plotted (one curve each). High reputation users tend to answer early. (From 2015/07/31 to 2017/12/31)}
-    \label{fig:fig1_2010}
+    \label{fig:fig1_2017}
 \end{figure}
 
-From Fig \ref{fig:fig1_2010} we calculate the median reputation of different answerers in a time-rank sequence, which means the answers of a question arrive successively. We find in most cases, the early answerers in the time-rank sequence usually have a relatively high reputation, and the later answerers are inclined to have lower reputations. This decrease is especially obvious when analyzing low speed answerers' reputation. The fact indicates that answerers' reputation can be utilized in evaluating whether if a question has been sufficiently answered, this will serve as the foundation of following prediction work. 
+From Fig \ref{fig:fig1_2010} we calculate the median reputation of different answerers in a time-rank sequence, which means the answers of a question arrive successively. We find in most cases, the early answerers in the time-rank sequence usually have a relatively high reputation, and the later answerers are inclined to have lower reputations. This decrease is especially obvious when analyzing low speed answerers' reputation. The fact indicates that answerers' reputation can be utilized in evaluating whether if a question has been sufficiently answered, this will serve as the foundation of following prediction work. %TODO
+% Say 2017 changes
 
+A similar scenario is also discovered by Anderson et al.\cite{anderson2012discovering}, they find the higher reputation a answerer owns, the quicker he/she will respond to a question. They consider wall-clock time, and they find users' respond time is approximately 5 minutes. Among all answerers hit the target around 5 minutes, high reputation users take a larger proportion of the group. 
+
+
+%Fig 2
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.7\columnwidth]{img/Fig2_2010.pdf}
+    \caption{Fraction of questions with the accepted answer as a function of the time for the first answer to arrive. The longer the wait to get the first answer, the less likely it is for any answer to be eventually accepted. (From 2008/07/31 to 2010/12/31)}
+    \label{fig:fig2_2010}
+\end{figure}
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.7\columnwidth]{img/Fig2_2017.pdf}
+    \caption{Fraction of questions with the accepted answer as a function of the time for the first answer to arrive. The longer the wait to get the first answer, the less likely it is for any answer to be eventually accepted. (From 2015/07/31 to 2017/12/31)}
+    \label{fig:fig2_2017}
+\end{figure}
+From the finding listed above, we can envision a pyramid structured relationship among Stack Overflow users.  Users with high reputation occupy the top of the pyramid, when new questions are proposed, they usually be noticed, considered or answered by top level users. Then lower level user will involve in such Q\&A section is the question remains to be unsolved. 
 
 \subsection{The activity level of a question}
 In the previous section, we illustrate the structure of users' reputation pyramid, which explains how answers arrival process relates to the user's reputation, as well as other phenomena from our observation. In this section, we would investigate more on voting, another significant mechanism of Stack Overflow. Except for merely answerers and questioners, other users can also involve in those Q\&A sections by commenting, voting, etc.. The voting mechanism is not only applicable to answers but also to questions, and it is also considered as an important factor to reflect community involvement and evaluation. From our observation of Stack Overflow, we notice that questions with more answers are more likely to benefit from community involvement: answers will get higher votes and questions will receive more favorites. Highly active Q\&A processes are more inclined to benefit from the community, instead of a competence among answerers themselves.  Based on our observation, our goal is to validate whether if the activity level is able to explain the feedback and evaluation from the community activities.
