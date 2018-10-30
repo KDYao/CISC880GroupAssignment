@@ -1,9 +1,26 @@
 \section{Community dynamics of question answering}
-Except from proposing a question and 
-
-
+Except answering to a proposed question, voting is another significant mechanism in Stack Overflow. Community users can evaluate the quality or usefulness of an answer by giving them a vote up or vote down. In this section, we focus on both investigate answering and voting mechanisms. Specifically, we want to find out how answerers' reputation correlates to the answers' arrival time. In addition, different scenarios from various questions' activeness are also our concern. To investigate these concerns, we reveal underlying scenarios behind Stack Overflow community, the result can be useful for researchers to possess a deeper understanding and insights on Stack Overflow. 
 
 \subsection{A reputation pyramid}
+A reputation mechanism adopted in Stack Overflow, it can be accumulate by answering questions, collecting more vote scores or winning a bonus. Usually, reputation is a significant standard to evaluate an answerer's expertness. In Stack Overflow, answerers are encouraged to answer a question quickly. In this scenario, we would expect an answerer with high reputation to be the provide timely correct answers. 
+
+%Fig 1
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.7\columnwidth]{img/Fig1_2010.pdf}
+    \caption{Median reputation versus answer time-rank. Questions with a total of 1 to 5 answers plotted (one curve each). High reputation users tend to answer early. (From 2008/07/31 to 2010/12/31)}
+    \label{fig:fig1_2010}
+\end{figure}
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.7\columnwidth]{img/Fig1_2017.pdf}
+    \caption{Median reputation versus answer time-rank. Questions with a total of 1 to 5 answers plotted (one curve each). High reputation users tend to answer early. (From 2015/07/31 to 2017/12/31)}
+    \label{fig:fig1_2010}
+\end{figure}
+
+From Fig \ref{fig:fig1_2010} we calculate the median reputation of different answerers in a time-rank sequence, which means the answers of a question arrive successively. We find in most cases, the early answerers in the time-rank sequence usually have a relatively high reputation, and the later answerers are inclined to have lower reputations. This decrease is especially obvious when analyzing low speed answerers' reputation. The fact indicates that answerers' reputation can be utilized in evaluating whether if a question has been sufficiently answered, this will serve as the foundation of following prediction work.
+
 
 \subsection{The activity level of a question}
 In the previous section, we illustrate the structure of users' reputation pyramid, which explains how answers arrival process relates to the user's reputation, as well as other phenomena from our observation. In this section, we would investigate more on voting, another significant mechanism of Stack Overflow. Except for merely answerers and questioners, other users can also involve in those QA sections by commenting, voting, etc.. The voting mechanism is not only applicable to answers but also to questions, and it is also considered as an important factor to reflect community involvement and evaluation. From our observation of Stack Overflow, we notice that questions with more answers are more likely to benefit from community involvement: answers will get higher votes and questions will receive more favorites. Highly active QA processes are more inclined to benefit from the community, instead of a competence among answerers themselves.  Based on our observation, our goal is to validate whether if the activity level is able to explain the feedback and evaluation from the community activities.
