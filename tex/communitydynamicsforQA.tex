@@ -19,8 +19,8 @@ A reputation mechanism adopted in Stack Overflow, it can be accumulate by answer
     \label{fig:fig1_2017}
 \end{figure}
 
-From Fig \ref{fig:fig1_2010} we calculate the median reputation of different answerers in a time-rank sequence, which means the answers of a question arrive successively. We find in most cases, the early answerers in the time-rank sequence usually have a relatively high reputation, and the later answerers are inclined to have lower reputations. This decrease is especially obvious when analyzing low speed answerers' reputation. The fact indicates that answerers' reputation can be utilized in evaluating whether if a question has been sufficiently answered, this will serve as the foundation of following prediction work. %TODO
-% Say 2017 changes
+From Fig \ref{fig:fig1_2010} we calculate the median reputation of different answerers in a time-rank sequence, which means the answers of a question arrive successively. We find in most cases, the early answerers in the time-rank sequence usually have a relatively high reputation, and the later answerers are inclined to have lower reputations. This decrease is especially obvious when analyzing low speed answerers' reputation. The fact indicates that answerers' reputation can be utilized in evaluating whether if a question has been sufficiently answered, this will serve as the foundation of following prediction work. In 2017 data, from Fig~\ref{fig:fig1_2017} we also find in most cases, the high reputation users arrive earlier when question is posted. This trend is not that obvious as previous dataset.
+
 
 A similar scenario is also discovered by Anderson et al.\cite{anderson2012discovering}, they find the higher reputation a answerer owns, the quicker he/she will respond to a question. They consider wall-clock time, and they find users' respond time is approximately 5 minutes. Among all answerers hit the target around 5 minutes, high reputation users take a larger proportion of the group. 
 
@@ -39,7 +39,42 @@ A similar scenario is also discovered by Anderson et al.\cite{anderson2012discov
     \caption{Fraction of questions with the accepted answer as a function of the time for the first answer to arrive. The longer the wait to get the first answer, the less likely it is for any answer to be eventually accepted. (From 2015/07/31 to 2017/12/31)}
     \label{fig:fig2_2017}
 \end{figure}
-From the finding listed above, we can envision a pyramid structured relationship among Stack Overflow users.  Users with high reputation occupy the top of the pyramid, when new questions are proposed, they usually be noticed, considered or answered by top level users. Then lower level user will involve in such Q\&A section is the question remains to be unsolved. 
+From the finding listed above, we can envision a pyramid structured relationship among Stack Overflow users.  Users with high reputation occupy the top of the pyramid, when new questions are proposed, they usually be noticed, considered or answered by top level users. Then lower level user will involve in such Q\&A section is the question remains to be unsolved. In Fig~\ref{fig:fig2_2010} we find the longer time it takes for an answer to arrive, the less likely that such question will accept an answer at the end. Similar trends can also be found in Fig~\ref{fig:fig2_2017}.
+
+
+%Fig 3
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.7\columnwidth]{img/Fig3_2010.pdf}
+    \includegraphics[width=0.7\columnwidth]{img/Fig3_2017.pdf}
+    \caption{Max, median, min answerer reputation as a function of the questioner reputation.}
+    \label{fig:fig3}
+\end{figure}
+
+Activity in Stack Overflow is driven by the incentive of reputation. Users with variant reputation points creates a pattern of behaviour among themselves. Overtime this pattern could be seen with respect to the number of total users. In Figure~\ref{fig:fig3} the relation between the questioner and answerer reputation is plotted. Questions from high reputation users are answered more by high reputation answerers. The questioner’s reputation has been plotted with log base 10. And the answerer reputation is plotted separate. Except the above rare case, the median reputation of users is the same.
+
+%Fig4
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.7\columnwidth]{img/Fig4_2010_left.pdf}
+    \includegraphics[width=0.7\columnwidth]{img/Fig4_2010_right.pdf}
+    \caption{Each curve shows how, given the reputation of the second answerer on a two-answer question, the likelihood of answering second deviates from a uniform baseline as a function of the reputation of the first answerer. The curves on the left (showing the bottom three reputation levels) slope downward, indicating lower reputation levels are more likely to answer questions second if the first answerer also has low reputation; and the curves on the right (showing the top three reputation levels) slope upward, illustrating an analogous homophily by reputation effect}
+    \label{fig:fig4_2010}
+\end{figure}
+For all the previous analysis, time orders of answers are ignored. Now our goal is to investigate the relationship between ordered reputation and time ordered answers. In this regard, we have taken the questions having two answers and the first answer arriving after 6 minutes. We also divided users into 6 different reputation group ordering according to their reputations. Then we put 3 groups from the bottom as low reputation groups and 3 groups from the top as high reputation groups. After that, we calculated the probability of answering a question when the first answer is answered by someone lower or higher reputation. From Figure~\ref{fig:fig4_2010} we can understand that irrespective of the second answerer reputation, it is less probable that a question is answered by the second answerer when the first answerer reputation is in the higher range.
+
+
+%Fig5
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.7\columnwidth]{img/Fig5_2010.pdf}
+    \includegraphics[width=0.7\columnwidth]{img/Fig5_2017.pdf}
+    \caption{(left) Average reputation points won, (right) Fraction of positive votes on a answer as a function of answer-rank i when the total of k were given to the question.}
+    \label{fig:fig5}
+\end{figure}
+Users get reputation point for each answer they post. If an answer has 3 positive votes and 1 negative votes, then the reputation change can be measured using Table 2. The calculation follows as 3*10 + 1 * -2 = 28. If the questioner accepts that same answer, then the answerer gets an additional 15 reputation points.
+The reputation won by an answer depends on the timing of that answer in that question. From Figure~\ref{fig:fig5}(a), we see that the reputation won by the first answer is always higher respective to the answers arriving later. And the last answer hast least reputation change, which indicates as time passes, activity on a questions page decline. But opposite to that, the fraction of votes in the later arriving answers are higher. This increase in positive votes along with the number of answers might be an indication that questioners might want to gather more answers on it before accepting one.
+
 
 \subsection{The activity level of a question}
 In the previous section, we illustrate the structure of users' reputation pyramid, which explains how answers arrival process relates to the user's reputation, as well as other phenomena from our observation. In this section, we would investigate more on voting, another significant mechanism of Stack Overflow. Except for merely answerers and questioners, other users can also involve in those Q\&A sections by commenting, voting, etc.. The voting mechanism is not only applicable to answers but also to questions, and it is also considered as an important factor to reflect community involvement and evaluation. From our observation of Stack Overflow, we notice that questions with more answers are more likely to benefit from community involvement: answers will get higher votes and questions will receive more favorites. Highly active Q\&A processes are more inclined to benefit from the community, instead of a competence among answerers themselves.  Based on our observation, our goal is to validate whether if the activity level is able to explain the feedback and evaluation from the community activities.

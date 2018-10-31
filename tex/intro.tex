@@ -1,1 +1,50 @@
-\section{Introduction} 
+\section{Introduction} Over the last decade, Q\&A communities have evolved into a large repository of community-driven knowledge. Notably, communities such as Quora and Stack Overflow have evolved into active and mature communities. In our study, we focus on the Stack Overflow community as it contains one of the most active Q\&A communities for developers. The questioner is the user who posed the question. On Stack Overflow, there is a significant fraction of domain experts who can provide answers to questioners with long-lasting value. Since Stack Overflow is a web-based Q\&A community, the interactions are stored, so that they can be viewed at any time, which means that the content increasingly has lasting value for users. 
+
+
+Seeing that there is opportunity for long-lasting value for consumers and producers from Q\&A communities, techniques can be used to analyze and extrapolate useful information about the community dynamics. Consumers of information are users who utilize the Q\&A community to consume knowledge. Producers of information are the domain experts that provide answers to difficult questions on the site. We can guide consumers of information to questions with the potential of having long-lasting value. In addition, we can help producers of information potentially identify questions that have not been successfully answered yet.
+
+
+Prior works have focused on using question-answer pairs for their analysis. In addition, prior work have proposed approaches to retrieve high quality question-answer pairs with the goal of helping people who have similar questions~\cite{liu2011predicting}.
+
+
+\noindent\textbf{A holistic view of question-answering sites.} Rather than the question-answer pair approach, we alternatively extract information from the community activity by considering questions together with their corresponding set of answers. We view community activity from two levels: 
+\begin{enumerate} 
+\item \textbf{Question level:} We focus on community activity from a question level by using questions with their corresponding set of answer because individual questions have the potential to generate multiple high quality answers. For example, a question such as,``How do you add a remote repository using Git?", can produce multiple high quality replies. We conjecture that questions combined with all their corresponding set of answers can create long-lasting value for questions on sites such as Stack Overflow.
+\item \textbf{Full site level:} We focus on community activity from a full site level by using the reputation feature from Stack Overflow because reputation provides holistic information about: 1) Levels of community involvement. 2) Incentives for successful contributions and positive behavior. Community involvement and reputation can show us the dynamics of how users provides answers to new questions and how the community approves or disapproves the answer.
+\end{enumerate}
+
+
+\noindent\textbf{Overview of Results.} To investigate the potential applications of studying community dynamics from a question and full site level for users on Q\&A sites we develop two tasks. The first task is to \textit{predict the long-lasting value} in order to help guide consumers of information to questions with the potential of having long-lasting value. We predict the long-lasting value by computing the question activity within a small time frame after the question is posed. The second task is to \textit{predict whether a question has been sufficiently answered} in order to help producers of information potentially identify questions that may need their contribution. 
+
+
+We use approaches that are constructed by the data from Stack Overflow to address the two tasks. We first identify latent information from the Stack Overflow community. Stack Overflow questions and answers can receive positive and negative votes from community members, which determines the quality of the answer. In addition, the questioner can accept one of the given answers. These factors contribute to a user's \textit{reputation score}, which we use for our analysis.
+
+
+We identify two principles that provide an organizing framework and features for our two prediction tasks:
+
+	\begin{enumerate}
+		\item \textbf{Expertise level: } There is a wide range of expertise level that  influences the sequence of contributions to a question, with experts generally responding first. The sequence is comparable to a \textit{reputation pyramid}, where experts or elites are at the top of the pyramid and the question trickles down in a top-down manner.
+		\item \textbf{Higher activity level: } Questions with higher activity level signifies the potential interest in the question and the potential of benefitting all answerers based on the evaluation of their answer from the community and their reputation increase. Higher activity questions associate with multiple answerers and can hint at the type of lasting value.
+	\end{enumerate}
+
+For predicting whether a question will have long-lasting value, we use features based on the answer arrival dynamics within an hour after the question is posed. In doing so, we can classify whether the questions pageviews will be high or low, one year later. We find that number of answers, sum of answer scores, number of questioner's questions, length of highest-scoring answer to arrive, number of comments on highest-scoring answer, and number of comments on highest-reputation answerer's answer are the most powerful features, which shows that attracting a diverse set of answers obtain greater value on Stack Overflow.
+
+
+For identifying questions that have not sufficiently been answered yet, we predict the questions that offer bounty for a better answer because when a question is not sufficiently answered they will resort to offering bounty. In result, we find that powerful features can lead to an effective prediction.
+
+
+The main goal of our paper is to use Stack Overflow to provide insights about question-answering sites by leveraging the performance of the features from the two prediction tasks to suggest that community dynamics can provide more information than simple question-answer pairs. 
+
+\section{Background}
+\subsection{The Stack Overflow Community}
+	Stack Overflow is one of the most active and successful Q\&A sites, where over 90\% of the questions receive a response that is accepted by the questioner. More than 80 Q\&A sites were influenced and have adopted the same Q\&A paradigm as Stack Overflow. In addition, Stack Overflow exhibits qualities that exist in the other Q\&A sites: 1) Complex questions on a certain domain. 2) An active community. 3) Significant number of experts.
+
+\textbf{Experimentation Results} 
+With different values of ‘k’, we show the results in table. It is also interesting to observe that as the value of k goes high, users rich in reputation provide bounties others’ questions.
+
+
+
+
+
+
+
